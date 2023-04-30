@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    color: aliceblue;
+    flex-direction: column;
+    border: solid 2px;
+
+}
+
+.containerInfo{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonback {
+    border-radius: 10px;
+    border-color: aqua;
+    color: aqua;
+    background-color: #282c34;
+}
+
+.buttonback:hover{
+    color: #282c34;
+    background-color: aqua;
+    cursor: pointer;
+}

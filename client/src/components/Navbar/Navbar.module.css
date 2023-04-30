@@ -1,0 +1,20 @@
+.container {
+    display:grid;
+    grid-template-columns: 15% 15% 15% 40% 15%;
+    background-color: aliceblue;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.active{
+    -webkit-text-stroke: 1px black;
+    color: rgba(0, 255, 255, 0.6);
+    text-underline-offset: 5px;
+    text-decoration-color: #282c34;
+}
+
+.disabled{
+    text-decoration: none;
+    color: inherit;
+}

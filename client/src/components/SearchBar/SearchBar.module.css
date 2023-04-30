@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    background-color: rgba(0, 255, 255, 0.6);
+    font-family: cursive;
+    border-radius: 10px 0 0 10px;
+    border-color: aqua;
+    outline: none;
+}
+
+.buttonsearch{
+    border-radius: 0 10px 10px 0;
+    border-color: aqua;
+    color: aqua;
+    background-color: #282c34;
+}
+
+.buttonsearch:hover{
+    color: #282c34;
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.buttonrandom {
+    border-radius: 10px;
+    border-color: aqua;
+    color: aqua;
+    background-color: #282c34;
+}
+
+.buttonrandom:hover{
+    color: #282c34;
+    background-color: aqua;
+    cursor: pointer;
+}
+

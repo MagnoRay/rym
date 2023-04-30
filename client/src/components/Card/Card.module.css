@@ -1,0 +1,69 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    height: 270px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    margin-top: 25px;
+}
+
+.container:hover{
+    transform: scale(1.1);
+}
+
+.btncontainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button{
+    border-radius: 20px;
+    margin: 10px 10px 0 0;
+    border: none;
+    background-color: red;
+    color: aliceblue;
+}
+
+.button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+img{
+    width: 200px;
+    border-radius: 10px 10px 0 0;
+}
+
+.imageContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.name{
+    background-color: rgba(0, 255, 255, 0.6);
+    position: absolute;
+    margin-bottom: 0px;
+}
+
+.propsContainer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    margin: 0px;
+    color: aqua;
+    border-radius: 0 0 20px 20px;
+}
+
+.propsContainer h2{
+    margin: 0;
+}
+
+.link{
+    text-decoration: none;
+    color: inherit;
+}

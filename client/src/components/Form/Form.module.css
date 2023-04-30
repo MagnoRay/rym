@@ -1,0 +1,33 @@
+.container{
+    display: inline-flex;
+    background-color: aliceblue;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 50px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.warning{
+    border-color: red;
+}
+
+.warningtext{
+    color: red;
+}
+
+.buttonusuario {
+    border-radius: 10px;
+    border-color: aqua;
+    color: aqua;
+    background-color: #282c34;
+}
+
+.buttonusuario:hover{
+    color: #282c34;
+    background-color: aqua;
+    cursor: pointer;
+}

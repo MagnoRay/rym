@@ -1,0 +1,12 @@
+.buttonfiltro {
+    border-radius: 10px;
+    border-color: aqua;
+    color: aqua;
+    background-color: #282c34;
+}
+
+.buttonfiltro:hover{
+    color: #282c34;
+    background-color: aqua;
+    cursor: pointer;
+}
