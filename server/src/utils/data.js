@@ -1,4 +1,4 @@
-const characters = [
+module.exports = [
   {
     id: '1',
     name: 'Morty Smith',
@@ -21,7 +21,7 @@ const characters = [
     image: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg'
   }
 ]
-
+/*
 export const Rick = {
   id: '4',
   name: 'Rick Sanchez',
@@ -29,5 +29,5 @@ export const Rick = {
   gender: 'Male',
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
 }
-
-export default characters
+*/
+//export default characters

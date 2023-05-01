@@ -17,7 +17,7 @@ export default function SearchBar(props){
         <div className={styled.container}>
             <input className={styled.input} type="search" placeholder="Buscar..!" onChange = {handleChange} />
             <button className={styled.buttonsearch} onClick={()=>onSearch(character)}>Agregar</button>
-            <button className={styled.buttonrandom} onClick={()=>onSearch(Math.floor(Math.random()*826))}>Random</button>
+            <button className={styled.buttonrandom} onClick={()=>onSearch(Math.floor(Math.random()*20))}>Random</button>
 
         </div>
     )
