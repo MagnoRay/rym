@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import './App.css';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 import Cards from './components/Cards/Cards.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
@@ -19,9 +20,9 @@ function App() {
   const navigate = useNavigate();
 
   const [access, setAccess] = useState(false);
-  const userName = "mraymundo@gmail.com";
-  const password = "magno123"; 
-
+  //const userName = "mraymundo@gmail.com";
+  //const password = "magno123"; 
+/* CON PROMESAS
  const onSearch = (character) =>{
   // Convertimos a un nuevo número
   const characterId = parseInt(character, 10);
@@ -42,6 +43,19 @@ function App() {
       }).
       catch(error => console.log(alert("Servidor Caido")));
   }
+ }*/
+
+ const onSearch = async (id) => {
+  try {
+    const {data} = await axios.get(`http://localhost:3001/rickandmorty/character/${id}`);
+    const char = characters.find((char)=>char.id === id);
+    if(id){
+      if(char) return alert("Personaje ya fue añadido");
+      setCharacters([...characters, data]);
+    }
+  } catch (error) {
+    alert(error.message)
+  }
  }
 
  const onClose = (id) => {
@@ -52,6 +66,8 @@ function App() {
   console.log("desde apps location: ",location);
  },[])  && setAccess(true) && navigate("/home")
  */
+
+/* Forma inicial
 const login = (userData) => {
   if(userData.userName === userName && userData.password === password){
     setAccess(true);
@@ -59,7 +75,32 @@ const login = (userData) => {
   }else{
     alert("Datos incorrectos, por favor verifique");
   }
+}*/
+// Desde la base de datos con express con promesas
+/*const login = (userData) => {
+  const { userName, password } = userData;
+  const URL = "http://localhost:3001/rickandmorty/login/";
+  axios(URL+ `?email=${userName}&password=${password}`).then(({data})=>{
+    const { access } = data;
+    setAccess(data);
+    access && navigate("/home");
+  });
 }
+*/
+
+const login = async(userData) => {
+  try {
+    const { userName, password } = userData;
+    const URL = "http://localhost:3001/rickandmorty/login/";
+    const { data } = await axios(URL+ `?email=${userName}&password=${password}`);
+    const { access } = data;
+      setAccess(data);
+      access && navigate("/home");
+  } catch (error) {
+    alert(error.message)
+  }
+}
+
 
 const logOut = () => {
   access && setAccess(false)

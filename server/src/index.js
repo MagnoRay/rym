@@ -1,10 +1,34 @@
+// Servidor Express
+const express = require('express');
+const server = express();
+const PORT = 3001
+
+const router = require("./routes/index")
+
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+  });
+
+server.use(express.json());
+server.use("/rickandmorty", router)
+  
+server.listen(PORT, ()=>{
+    console.log('Server raised in port: '+PORT);
+});
+
+
+/* servidor con http
 const http = require("http");
-const data = require("./utils/character.json");
+//const data = require("./utils/character.json");
+const getCharById = require("./controller/getCharById"); 
 const PORT = 3001
 
 http.createServer((req, res)=>{
     res.setHeader("Access-Control-Allow-Origin", "*");
-    console.log(req.url);
     try {
         const { url } = req;
         if(url.includes("/rickandmorty/character")){
@@ -15,20 +39,7 @@ http.createServer((req, res)=>{
             // data: [{id: 1}...]
             // == -> valor
             // === -> tipo y valor
-            const character = data.results.find((char)=>char.id==id);
-            if(character){
-                
-            res.writeHead(200, {"Content-Type":"application/json"})
-            // character -> objeto de js
-            // JSON
-            res.end(JSON.stringify(character))
-            }else{
-                
-            res.writeHead(404, {"Content-Type":"application/json"})
-            // character -> objeto de js
-            // JSON
-            res.end(JSON.stringify({error: `Character no found with id: ${id}`}))
-            }
+            getCharById(res, id);
         }
     } catch (error) {
         console.log(error);
@@ -37,3 +48,4 @@ http.createServer((req, res)=>{
 }).listen(PORT, ()=>{
     console.log(`Server on Port ${PORT}`);
 })
+*/

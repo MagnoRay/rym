@@ -45,7 +45,7 @@ const handleFilterOrder = (e) => {
                 image, 
                 gender
             })=>(
-                <Card key={id} id={id} name={name} species={species} image={image} gender={gender}/>
+                <Card id={id} key={id} name={name} species={species} image={image} gender={gender}/>
             ))}
         </DivCont>
     )

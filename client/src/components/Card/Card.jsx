@@ -9,9 +9,9 @@ const Card = ({id, name, species, image, gender, onClose, deleteFavorite, addFav
 
     const [isFav, setIsFav] = useState(false);
 
-
     const handleFavorite = () => {
         if(isFav){
+            console.log("Desde card", isFav);
             setIsFav(false);
             deleteFavorite(id);
         }else{
@@ -26,7 +26,7 @@ const Card = ({id, name, species, image, gender, onClose, deleteFavorite, addFav
               setIsFav(true);
            }
         });
-     }, [myFavorites, id]);
+     }, [myFavorites]);
 
      
     return(
